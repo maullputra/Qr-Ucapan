@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            /* background-color: #f0f8ff; */
+            background-image: url(mosque_big.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            padding: 50px;
+        }
+
+        h1, h3 {
+            color: #4CAF50;
+        }
+
+        #qrcode {
+            margin-top: 20px;
+            display: inline-block;
+            border: 2px solid #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Klik di bawah untuk menghasilkan QR Code</h1>
+    <h3>Lalu Scan Qr Code...</h3>
+    <button id="generateQRCode">Generate QR Code</button>
+    <div id="qrcode"></div>
+
+    <script>
+        document.getElementById('generateQRCode').addEventListener('click', function () {
+            // URL yang akan di-scan
+            const url = "https://example.com/hari-raya"; // Ganti dengan URL yang sesuai
+            $('#qrcode').empty(); // Kosongkan QR Code sebelumnya
+            $('#qrcode').qrcode({
+                text: url,
+                width: 128,
+                height: 128
+            });
+        });
+    </script>
+</body>
+
+</html>
